@@ -1,0 +1,74 @@
+package com.example.omega.appfooball;
+
+
+import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.omega.appfooball.viewpager.GoalsConcededFragment;
+import com.example.omega.appfooball.viewpager.GoalsPassingFragment;
+import com.example.omega.appfooball.viewpager.GoalsScoredFragment;
+
+public class ContenedorPagerViewFragment extends Fragment {
+
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
+    private Toolbar toolbar;
+    private AppBarLayout appBarLayout;
+
+
+    public static ContenedorPagerViewFragment newInstance() {
+        ContenedorPagerViewFragment fragment = new ContenedorPagerViewFragment();
+        Bundle args = new Bundle();
+
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+
+        View v= inflater.inflate(R.layout.fragment_contenedor_pager_view, container, false);
+        View parent= (View) container.getParent();
+
+        appBarLayout= (AppBarLayout) parent.findViewById(R.id.appBar);
+
+        tabLayout=new TabLayout(getActivity());
+
+        viewPager=(ViewPager) v.findViewById(R.id.viewpager);
+
+        SectionPagerAdapter sectionPagerAdapter = new SectionPagerAdapter(getFragmentManager());
+
+        sectionPagerAdapter.addFragment(new GoalsPassingFragment(), "Fragment 1");
+        sectionPagerAdapter.addFragment(new GoalsConcededFragment(), "Fragment 2");
+        sectionPagerAdapter.addFragment(new GoalsScoredFragment(), "Fragment 3");
+
+        viewPager.setAdapter(sectionPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        toolbar= (Toolbar) getActivity().findViewById(R.id.toolbar);
+
+        appBarLayout.addView(tabLayout);
+
+
+        return v;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        appBarLayout.removeView(tabLayout);
+    }
+}
