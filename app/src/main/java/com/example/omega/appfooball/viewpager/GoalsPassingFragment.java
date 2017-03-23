@@ -1,81 +1,88 @@
 package com.example.omega.appfooball.viewpager;
 
-import android.net.Uri;
 import android.os.Bundle;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.omega.appfooball.R;
+import com.example.omega.appfooball.recyclerView.Team;
+import com.example.omega.appfooball.recyclerView.TeamAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link GoalsPassingFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link GoalsPassingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
+
 public class GoalsPassingFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private RecyclerView recycler;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager lManager;
 
-    private OnFragmentInteractionListener mListener;
-
-    public GoalsPassingFragment() {
-        // Required empty public constructor
-    }
-
-
-    // TODO: Rename and change types and number of parameters
     public static GoalsPassingFragment newInstance() {
         GoalsPassingFragment fragment = new GoalsPassingFragment();
-        Bundle args = new Bundle();
-
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_goals_passing, container, false);
+        View v =inflater.inflate(R.layout.fragment_goals_passing, container, false);
+
+         ArrayList<Team> items = new ArrayList<>();
+
+            items.add(new Team("Barcelona FC", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+            items.add(new Team("Atletico Madrid", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+            items.add(new Team("Real Madrid", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+            items.add(new Team("Rayo vallecano", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+            items.add(new Team("Eibar", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+            items.add(new Team("Levante", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+            items.add(new Team("Valencia", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+
+
+
+// Obtener el Recycler
+        recycler = (RecyclerView) v.findViewById(R.id.recycler_view_passing);
+        recycler.setHasFixedSize(true);
+
+
+// Usar un administrador para LinearLayout
+        lManager = new LinearLayoutManager(getActivity());
+        recycler.setLayoutManager(lManager);
+
+
+// Crear un nuevo adaptador
+        adapter = new TeamAdapter(items);
+        recycler.setAdapter(adapter);
+
+        //rv.setAdapter(new AdapterRecycler(getTeam(),getActivity()));
+        return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+
+    private ArrayList<Team> getTeam(){
+        ArrayList<Team> teams= new ArrayList<>();
+        Team team= new Team("Barcelona", 22, 30, 15, 30, R.drawable.arrow_left_drop_circle_outline);
+        teams.add(team);
+
+        team= new Team("Real Madrid", 22, 30, 15, 30, R.drawable.arrow_left_drop_circle_outline);
+        teams.add(team);
+
+        team= new Team("Atletico Madrid", 22, 30, 15, 30, R.drawable.arrow_left_drop_circle_outline);
+        teams.add(team);
+
+        return teams;
     }
 
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }

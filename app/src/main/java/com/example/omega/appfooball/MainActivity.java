@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-            GoalsConcededFragment fragment = new GoalsConcededFragment();
+            GoalsPassingFragment fragment = new GoalsPassingFragment();
             fragmentTransaction.replace(R.id.content_main, fragment);
             fragmentTransaction.commit();
 

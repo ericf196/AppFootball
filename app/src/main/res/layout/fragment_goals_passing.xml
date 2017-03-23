@@ -4,15 +4,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.omega.appfooball.viewpager.GoalsPassingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:text="Goals Scored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:gravity="center_vertical"
-        android:id="@+id/goals_scored"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_passing"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

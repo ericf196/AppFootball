@@ -1,6 +1,7 @@
 package com.example.omega.appfooball;
 
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
@@ -46,16 +47,19 @@ public class ContenedorPagerViewFragment extends Fragment {
         appBarLayout= (AppBarLayout) parent.findViewById(R.id.appBar);
 
         tabLayout=new TabLayout(getActivity());
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorAccent));
+        tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
 
         viewPager=(ViewPager) v.findViewById(R.id.viewpager);
 
         SectionPagerAdapter sectionPagerAdapter = new SectionPagerAdapter(getFragmentManager());
 
-        sectionPagerAdapter.addFragment(new GoalsPassingFragment(), "Fragment 1");
-        sectionPagerAdapter.addFragment(new GoalsConcededFragment(), "Fragment 2");
-        sectionPagerAdapter.addFragment(new GoalsScoredFragment(), "Fragment 3");
+        sectionPagerAdapter.addFragment(new GoalsPassingFragment(), "Goals Passing");
+        sectionPagerAdapter.addFragment(new GoalsConcededFragment(), " Goals Conceded");
+        sectionPagerAdapter.addFragment(new GoalsScoredFragment(), "Goals Scored");
 
         viewPager.setAdapter(sectionPagerAdapter);
+
         tabLayout.setupWithViewPager(viewPager);
 
         toolbar= (Toolbar) getActivity().findViewById(R.id.toolbar);
