@@ -42,13 +42,21 @@ public class GoalsPassingFragment extends Fragment {
 
          ArrayList<Team> items = new ArrayList<>();
 
-            items.add(new Team("Barcelona FC", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
-            items.add(new Team("Atletico Madrid", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
-            items.add(new Team("Real Madrid", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
-            items.add(new Team("Rayo vallecano", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
-            items.add(new Team("Eibar", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
-            items.add(new Team("Levante", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
-            items.add(new Team("Valencia", 50,10,60, 80, R.drawable.arrow_left_drop_circle_outline));
+            items.add(new Team("Arsenal FC", 55,10,70, 80, R.drawable.arsenal_fc));
+            items.add(new Team("Chelsea FC", 48,10,80, 80, R.drawable.chelsea_fc));
+            items.add(new Team("Kiverpool FC", 45,10,60, 80, R.drawable.liverpool_fc));
+            items.add(new Team("Manchester City", 32,10,10, 80, R.drawable.manchester_city));
+            items.add(new Team("Manchester United", 22,10,60, 20, R.drawable.manchester_united));
+            items.add(new Team("fulham_FC", 20,10,20, 80, R.drawable.fulham_fc));
+            items.add(new Team("Leicester city", 18,10,45, 70, R.drawable.leicester_city));
+            items.add(new Team("Stoke City", 18,10,45, 70, R.drawable.stoke_city));
+            items.add(new Team("Tottenham Hotspur", 18,10,45, 70, R.drawable.tottenham_hotspur));
+            items.add(new Team("Watford FC", 18,10,45, 70, R.drawable.watford_fc));
+            items.add(new Team("West Bromwich Albion", 18,10,45, 70, R.drawable.west_bromwich_albion));
+            items.add(new Team("West Ham United", 18,10,45, 70, R.drawable.west_ham_united));
+            items.add(new Team("Wigan Athletic", 18,10,45, 70, R.drawable.wigan_athletic));
+
+
 
 
 
@@ -70,19 +78,5 @@ public class GoalsPassingFragment extends Fragment {
         return v;
     }
 
-
-    private ArrayList<Team> getTeam(){
-        ArrayList<Team> teams= new ArrayList<>();
-        Team team= new Team("Barcelona", 22, 30, 15, 30, R.drawable.arrow_left_drop_circle_outline);
-        teams.add(team);
-
-        team= new Team("Real Madrid", 22, 30, 15, 30, R.drawable.arrow_left_drop_circle_outline);
-        teams.add(team);
-
-        team= new Team("Atletico Madrid", 22, 30, 15, 30, R.drawable.arrow_left_drop_circle_outline);
-        teams.add(team);
-
-        return teams;
-    }
 
 }

@@ -50,6 +50,7 @@ public class ContenedorPagerViewFragment extends Fragment {
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorAccent));
         tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
 
+
         viewPager=(ViewPager) v.findViewById(R.id.viewpager);
 
         SectionPagerAdapter sectionPagerAdapter = new SectionPagerAdapter(getFragmentManager());

@@ -1,5 +1,6 @@
 package com.example.omega.appfooball;
 
+import android.graphics.drawable.LayerDrawable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.omega.appfooball.util.Utils;
 import com.example.omega.appfooball.viewpager.GoalsConcededFragment;
 import com.example.omega.appfooball.viewpager.GoalsPassingFragment;
 import com.example.omega.appfooball.viewpager.GoalsScoredFragment;
@@ -30,9 +32,9 @@ import com.example.omega.appfooball.viewpager.GoalsScoredFragment;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    //private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    private ViewPager mViewPager;
+   // private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,14 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
+        MenuItem item = menu.findItem(R.id.notification);
+
+        // Obtener drawable del item
+        LayerDrawable icon = (LayerDrawable) item.getIcon();
+
+        // Actualizar el contador
+        Utils.setBadgeCount(this, icon, 3);
         return true;
     }
 
@@ -78,7 +88,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.notification) {
             return true;
         }
 
@@ -99,8 +109,6 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.content_main, fragment);
             fragmentTransaction.commit();
 
-
-
         } else if (id == R.id.nav_gallery) {
             // podira meter el placer Fragment
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -109,9 +117,6 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.content_main, fragment);
             fragmentTransaction.commit();
 
-
-
-            Log.i("msg","msg");
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -127,86 +132,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
-
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        public static PlaceholderFragment newInstance() {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.content_main, container, false);
-            //View rootView = inflater.inflate(R.layout.activity_main, container, false);
-
-
-            return rootView;
-        }
-    }
-
-
-
-
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(android.support.v4.app.FragmentManager fm) {
-
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0: // Fragment # 0 - This will show FirstFragment
-                    return GoalsPassingFragment.newInstance();
-                case 1: // Fragment # 0 - This will show FirstFragment different title
-                    return GoalsScoredFragment.newInstance();
-                case 2: // Fragment # 1 - This will show SecondFragment
-                    return GoalsConcededFragment.newInstance();
-                default:
-                    return null;
-            }
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "SECTION 1";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
-        }
-    }
-
-
-
-
 
 
 }

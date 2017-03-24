@@ -21,20 +21,19 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
 
     public static class TeamViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
-        public ImageView imagen;
-        public TextView pases;
+        public ImageView imagenEscudo;
+        public TextView teamName;
         public TextView scored;
+        public TextView position;
 
         public TeamViewHolder(View v) {
             super(v);
-            imagen = (ImageView) v.findViewById( R.id.ic_escudo);
-            pases = (TextView) v.findViewById(R.id.pases);
+            imagenEscudo = (ImageView) v.findViewById( R.id.ic_escudo);
+            teamName = (TextView) v.findViewById(R.id.team_name);
             scored = (TextView) v.findViewById(R.id.scored);
+            position = (TextView) v.findViewById(R.id.position);
         }
     }
-
-
-
 
     public TeamAdapter(List<Team> items) {
         this.items = items;
@@ -49,9 +48,10 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
 
     @Override
     public void onBindViewHolder(TeamViewHolder holder, int position) {
-        holder.imagen.setImageResource(items.get(position).getEscudoTeam());
-        holder.pases.setText(String.valueOf(items.get(position).getGoalsPassing()));
-        holder.scored.setText(String.valueOf(items.get(position).getGoalsScored()));
+        holder.imagenEscudo.setImageResource(items.get(position).getEscudoTeam());
+        holder.teamName.setText(String.valueOf(items.get(position).getNameTeam()));
+        holder.scored.setText(String.valueOf(items.get(position).getPointTable()));
+        holder.position.setText(String.valueOf((position)+1));
     }
 
     @Override
