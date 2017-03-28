@@ -2,16 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.omega.appfooball.viewpager.GoalsConcededFragment">
+    tools:context="com.example.omega.appfooball.fragments.GoalsConcededFragment">
 
-    <TextView
-        android:text="Goals Conceded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:gravity="center_vertical"
-        android:id="@+id/goals_conceded"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_conceded"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

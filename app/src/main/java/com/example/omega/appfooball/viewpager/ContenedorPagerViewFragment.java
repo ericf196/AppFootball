@@ -1,4 +1,4 @@
-package com.example.omega.appfooball;
+package com.example.omega.appfooball.viewpager;
 
 
 import android.content.res.ColorStateList;
@@ -6,17 +6,17 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.omega.appfooball.viewpager.GoalsConcededFragment;
-import com.example.omega.appfooball.viewpager.GoalsPassingFragment;
-import com.example.omega.appfooball.viewpager.GoalsScoredFragment;
+import com.example.omega.appfooball.R;
+import com.example.omega.appfooball.SectionPagerAdapter;
+import com.example.omega.appfooball.fragments.GoalsConcededFragment;
+import com.example.omega.appfooball.fragments.GoalsPassingFragment;
+import com.example.omega.appfooball.fragments.GoalsScoredFragment;
 
 public class ContenedorPagerViewFragment extends Fragment {
 
@@ -48,6 +48,7 @@ public class ContenedorPagerViewFragment extends Fragment {
 
         tabLayout=new TabLayout(getActivity());
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorAccent));
+
         tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
 
 

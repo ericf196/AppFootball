@@ -12,10 +12,10 @@ import com.example.omega.appfooball.R;
 import java.util.List;
 
 /**
- * Created by Omega on 23/3/2017.
+ * Created by Omega on 26/3/2017.
  */
 
-public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder>{
+public class TeamAdapterScored extends RecyclerView.Adapter<TeamAdapterScored.TeamViewHolder> {
 
     private List<Team> items;
 
@@ -35,29 +35,27 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
         }
     }
 
-    public TeamAdapter(List<Team> items) {
+    public TeamAdapterScored(List<Team> items) {
         this.items = items;
     }
 
-    @Override
     public TeamViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_list_team, parent, false);
-        return new TeamViewHolder(v);
+                .inflate(R.layout.row_list_team_scored, parent, false);
+
+        return new TeamAdapterScored.TeamViewHolder(v);
     }
 
-    @Override
-    public void onBindViewHolder(TeamViewHolder holder, int position) {
+    public void onBindViewHolder(TeamAdapterScored.TeamViewHolder holder, int position) {
         holder.imagenEscudo.setImageResource(items.get(position).getEscudoTeam());
         holder.teamName.setText(String.valueOf(items.get(position).getNameTeam()));
-        holder.scored.setText(String.valueOf(items.get(position).getPointTable()));
+        holder.scored.setText(String.valueOf(items.get(position).getGoalsScored()));
         holder.position.setText(String.valueOf((position)+1));
+
     }
 
-    @Override
     public int getItemCount() {
         return items.size();
     }
-
 
 }

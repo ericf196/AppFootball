@@ -4,15 +4,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -21,13 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
+import com.example.omega.appfooball.fragments.PositionTableFragment;
 import com.example.omega.appfooball.util.Utils;
-import com.example.omega.appfooball.viewpager.GoalsConcededFragment;
-import com.example.omega.appfooball.viewpager.GoalsPassingFragment;
-import com.example.omega.appfooball.viewpager.GoalsScoredFragment;
+import com.example.omega.appfooball.viewpager.ContenedorPagerViewFragment;
+import com.example.omega.appfooball.fragments.GoalsPassingFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -105,7 +94,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-            GoalsPassingFragment fragment = new GoalsPassingFragment();
+            PositionTableFragment fragment = new PositionTableFragment();
             fragmentTransaction.replace(R.id.content_main, fragment);
             fragmentTransaction.commit();
 
@@ -119,8 +108,6 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
