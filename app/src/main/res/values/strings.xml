@@ -5,6 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="notification">Notificacion</string>
+    <string name="Team1">West Bromwich Albion</string>
+    <string name="Team2">Arsenal FC</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

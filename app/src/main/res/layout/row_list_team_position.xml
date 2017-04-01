@@ -11,6 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginBottom="0.5dp"
+        card_view:cardElevation="0dp"
+        card_view:cardMaxElevation="0dp"
+        card_view:cardUseCompatPadding="false"
         card_view:cardBackgroundColor="@color/primary">
 
         <LinearLayout
@@ -66,15 +69,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:id="@+id/move"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:gravity="right">
 
                 <TextView
                     android:id="@+id/table_pj"
-                    android:layout_width="wrap_content"
+                    android:layout_width="14dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="20dp"
                     android:text="40"
                     android:textSize="12dp"
                     android:layout_gravity="center_vertical"
@@ -84,25 +86,23 @@
 
                 <TextView
                     android:id="@+id/table_g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="14dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+
+                    android:layout_marginRight="20dp"
                     android:text="40"
                     android:textSize="12dp"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/colorAccent"
-                    android:layout_weight="1"
+
                     />
                 <TextView
                     android:id="@+id/table_e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="14dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="40"
                     android:textSize="12dp"
-                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/colorAccent"
 
@@ -110,29 +110,24 @@
 
                 <TextView
                     android:id="@+id/table_p"
-                    android:layout_width="wrap_content"
+                    android:layout_width="14dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="40"
                     android:textSize="12dp"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/colorAccent"
-                    android:layout_weight="1"
-                    />
+                     />
 
                 <TextView
                     android:id="@+id/table_pts"
-                    android:layout_width="wrap_content"
+                    android:layout_width="14dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="40"
                     android:textSize="12dp"
-                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/colorAccent"
-
                     />
 
             </LinearLayout>

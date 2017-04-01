@@ -1,6 +1,4 @@
-package com.example.omega.appfooball.recyclerView;
-
-import android.os.Build;
+package com.example.omega.appfooball.models;
 
 import com.example.omega.appfooball.R;
 

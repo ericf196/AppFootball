@@ -10,14 +10,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@color/colorPrimary"
-        android:layout_marginBottom="1dp"
-        android:weightSum="4">
+        android:layout_marginBottom="1dp">
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="4">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -43,8 +42,8 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1">
 
             <TextView
@@ -54,8 +53,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/cardview_light_background"
-                android:text="PJ"
-                android:layout_weight="1" />
+                android:text="PJ" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,8 +62,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/cardview_light_background"
-                android:text="G"
-                android:layout_weight="1" />
+                android:text="G"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -74,8 +71,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/cardview_light_background"
-                android:text="E"
-                android:layout_weight="1" />
+                android:text="E" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,17 +81,16 @@
                 android:layout_marginRight="10dp"
                 android:text="P"
                 android:textColor="@color/cardview_light_background"
-                android:layout_weight="1" />
+                android:id="@+id/textView2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:textSize="18dp"
                 android:textColor="@color/cardview_light_background"
-                android:text="PTS"
-                android:layout_weight="1" />
+                android:text="PTS" />
         </LinearLayout>
 
     </LinearLayout>

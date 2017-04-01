@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.omega.appfooball.R;
-import com.example.omega.appfooball.recyclerView.Team;
+import com.example.omega.appfooball.models.Team;
 import com.example.omega.appfooball.recyclerView.TeamAdapterScored;
 
 import java.util.ArrayList;

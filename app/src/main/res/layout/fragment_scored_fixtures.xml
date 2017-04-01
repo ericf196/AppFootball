@@ -2,10 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.omega.appfooball.fragments.GoalsConcededFragment">
+    tools:context="com.example.omega.appfooball.fragments.ScoresFixturesFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_conceded"
+        android:id="@+id/recycler_view_score_fixture"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

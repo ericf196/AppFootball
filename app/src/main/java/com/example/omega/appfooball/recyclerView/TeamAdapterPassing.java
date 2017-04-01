@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.omega.appfooball.R;
+import com.example.omega.appfooball.models.Team;
 
 import java.util.List;
 

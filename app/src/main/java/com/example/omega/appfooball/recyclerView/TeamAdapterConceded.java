@@ -1,14 +1,8 @@
 package com.example.omega.appfooball.recyclerView;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.omega.appfooball.R;
+import com.example.omega.appfooball.models.Team;
 
 import java.util.List;
 
@@ -57,13 +52,12 @@ public class TeamAdapterConceded extends RecyclerView.Adapter<TeamAdapterConcede
     }
 
 
-    public TeamAdapterConceded.TeamViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TeamViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.row_list_team_conceded, parent, false);
 
 
-
-        return new TeamAdapterConceded.TeamViewHolder(v);
+        return new TeamViewHolder(v);
 
     }
 
@@ -85,7 +79,6 @@ public class TeamAdapterConceded extends RecyclerView.Adapter<TeamAdapterConcede
 
 
     }
-
 
     public int getItemCount() {
         return items.size();

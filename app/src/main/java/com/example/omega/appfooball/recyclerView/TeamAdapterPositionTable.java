@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.omega.appfooball.R;
+import com.example.omega.appfooball.models.Team;
 
 import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Created by Omega on 27/3/2017.

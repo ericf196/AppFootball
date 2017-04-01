@@ -1,6 +1,7 @@
 package com.example.omega.appfooball;
 
 import android.graphics.drawable.LayerDrawable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.omega.appfooball.fragments.PositionTableFragment;
+import com.example.omega.appfooball.fragments.ScoresFixturesFragment;
 import com.example.omega.appfooball.util.Utils;
 import com.example.omega.appfooball.viewpager.ContenedorPagerViewFragment;
 import com.example.omega.appfooball.fragments.GoalsPassingFragment;
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity
         LayerDrawable icon = (LayerDrawable) item.getIcon();
 
         // Actualizar el contador
-        Utils.setBadgeCount(this, icon, 3);
+        Utils.setBadgeCount(this, icon, 1);
         return true;
     }
 
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_gallery) {
-            // podira meter el placer Fragment
+
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
             ContenedorPagerViewFragment fragment = new ContenedorPagerViewFragment();
@@ -108,6 +110,11 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+            Fragment fragment = ScoresFixturesFragment.newInstance();
+            fragmentTransaction.replace(R.id.content_main, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_share) {
 

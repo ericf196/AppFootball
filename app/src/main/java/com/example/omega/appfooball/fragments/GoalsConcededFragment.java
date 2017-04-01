@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.omega.appfooball.R;
-import com.example.omega.appfooball.recyclerView.Team;
+import com.example.omega.appfooball.models.Team;
 import com.example.omega.appfooball.recyclerView.TeamAdapterConceded;
+import com.example.omega.appfooball.recyclerView.TeamAdapterScoresFixtures;
 
 import java.util.ArrayList;
 
@@ -25,9 +26,6 @@ public class GoalsConcededFragment extends Fragment {
 
     public static GoalsConcededFragment newInstance() {
         GoalsConcededFragment fragment = new GoalsConcededFragment();
-        //Bundle args = new Bundle();
-
-        //fragment.setArguments(args);
         return fragment;
     }
 
@@ -59,7 +57,6 @@ public class GoalsConcededFragment extends Fragment {
 // Crear un nuevo adaptador
         adapter = new TeamAdapterConceded(items);
         recycler.setAdapter(adapter);
-
 
         return v;
     }
