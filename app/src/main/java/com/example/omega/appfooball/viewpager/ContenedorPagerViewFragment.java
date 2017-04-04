@@ -1,10 +1,6 @@
 package com.example.omega.appfooball.viewpager;
 
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;

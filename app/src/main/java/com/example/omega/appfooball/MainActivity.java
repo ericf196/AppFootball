@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.example.omega.appfooball.fragments.PositionTableFragment;
 import com.example.omega.appfooball.fragments.ScoresFixturesFragment;
+import com.example.omega.appfooball.fragments.StreamingFragment;
 import com.example.omega.appfooball.util.Utils;
 import com.example.omega.appfooball.viewpager.ContenedorPagerViewFragment;
 import com.example.omega.appfooball.fragments.GoalsPassingFragment;
@@ -117,6 +118,11 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_share) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+            Fragment fragment = StreamingFragment.newInstance();
+            fragmentTransaction.replace(R.id.content_main, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_send) {
 

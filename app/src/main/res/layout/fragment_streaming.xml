@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.omega.appfooball.fragments.StreamingFragment">
+
+
+     <!-- <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/view_streaming"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        class="com.google.android.youtube.player.YouTubePlayerView"
+        />-->
+    <FrameLayout
+        android:id="@+id/youtube_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible" />
+
+    <Button
+        android:text="Play Video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_play_youtube"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
