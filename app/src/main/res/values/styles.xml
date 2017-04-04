@@ -15,4 +15,27 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
+    <!-- PagerViewTitle -->
+
+        <style name="CustomTitlePageIndicator">
+            <!-- color de fondo de toda la barra en la que se muestra el nombre -->
+            <item name="android:background">@android:color/black</item>
+            <!-- color de la barra indicadora, debajo de los nombres -->
+            <item name="footerColor">@color/colorAccent</item>
+            <!-- ancho linea inferior del footer -->
+            <item name="footerLineHeight">1dp</item>
+            <!-- ancho de la barra inferior al nombre -->
+            <item name="footerIndicatorHeight">4dp</item>
+            <!-- estilo del indicador inferior "none","triangle","underline"-->
+            <item name="footerIndicatorStyle">underline</item>
+            <!-- color del texto -->
+            <item name="android:textColor">@color/primary_dark</item>
+            <!-- color del texto de la página seleccionada -->
+            <item name="selectedColor">@color/colorAccent</item>
+            <!-- aplica bold al texto seleccionado -->
+            <item name="selectedBold">true</item>
+        </style>
+
+
+
 </resources>

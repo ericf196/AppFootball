@@ -23,6 +23,7 @@ public class GoalsPassingFragment extends Fragment {
 
     public static GoalsPassingFragment newInstance() {
         GoalsPassingFragment fragment = new GoalsPassingFragment();
+
         return fragment;
     }
 
