@@ -1,6 +1,7 @@
 package com.example.omega.appfooball.fragments;
 
 
+import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.omega.appfooball.R;
@@ -19,6 +22,9 @@ import com.google.android.youtube.player.YouTubePlayer.OnInitializedListener;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class StreamingFragment extends Fragment /*implements View.OnClickListener, YouTubePlayer.OnInitializedListener*/{
 
@@ -27,27 +33,17 @@ public class StreamingFragment extends Fragment /*implements View.OnClickListene
 
     private static final String API_KEY = "AIzaSyBDnx8srcY_np_M7BMnis74p1x1HRhE9Q0";
 
-    private static String VIDEO_ID = "a4NT5iBFuZs";
+    private static String VIDEO_ID = "WjU1vFTofyE";
 
+    private TextView viewDays, viewHours, viewMinutes, viewSeconds, tvEvent;
+    private LinearLayout linearLayout1, linearLayout2;
+    private Handler handler;
+    private Runnable runnable;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     // TODO: Rename and change types and number of parameters
     public static StreamingFragment newInstance() {
         StreamingFragment fragment = new StreamingFragment();
-
-
-
-
-
-
-        /*Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);*/
-
 
         return fragment;
     }
@@ -57,11 +53,6 @@ public class StreamingFragment extends Fragment /*implements View.OnClickListene
         super.onCreate(savedInstanceState);
 
 
-
-        /*if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }*/
     }
 
     @Override
@@ -70,30 +61,27 @@ public class StreamingFragment extends Fragment /*implements View.OnClickListene
 
         View v=inflater.inflate(R.layout.fragment_streaming, container, false);
 
-
-
-
-        // YouTubeフラグメントインスタンスを取得
         YouTubePlayerSupportFragment youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
 
-        // レイアウトにYouTubeフラグメントを追加
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.add(R.id.youtube_layout, youTubePlayerFragment).commit();
 
-        // YouTubeフラグメントのプレーヤーを初期化する
         youTubePlayerFragment.initialize(API_KEY, new OnInitializedListener() {
 
-            // YouTubeプレーヤーの初期化成功
             @Override
             public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
                 if (!wasRestored) {
-                    player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-                    player.loadVideo(VIDEO_ID);
-                    player.play();
+
+                    player.setShowFullscreenButton(false);
+                    //player.setFullscreenControlFlags(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
+                    //player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
+                    player.cueVideo(VIDEO_ID);
+                    //player.loadVideo(VIDEO_ID);
+
+
                 }
             }
 
-            // YouTubeプレーヤーの初期化失敗
             @Override
             public void onInitializationFailure(Provider provider, YouTubeInitializationResult error) {
                 // YouTube error
@@ -103,9 +91,84 @@ public class StreamingFragment extends Fragment /*implements View.OnClickListene
             }
         });
 
+         viewDays=(TextView) v.findViewById(R.id.view_days);
+         viewHours=(TextView) v.findViewById(R.id.view_hours);
+         viewMinutes=(TextView) v.findViewById(R.id.view_minutes);
+         viewSeconds=(TextView) v.findViewById(R.id.view_seconds);
+
+        countDownStart();
 
         return v;
     }
 
+    public void countDownStart() {
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                handler.postDelayed(this, 1000);
+                try {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    // Here Set your Event Date
+                    Date eventDate = dateFormat.parse("2017-04-10");
+                    Date currentDate = new Date();
+                    if (!currentDate.after(eventDate)) {
+                        long diff = eventDate.getTime() - currentDate.getTime();
+                        long days = diff / (24 * 60 * 60 * 1000);
+                        diff -= days * (24 * 60 * 60 * 1000);
+                        long hours = diff / (60 * 60 * 1000);
+                        diff -= hours * (60 * 60 * 1000);
+                        long minutes = diff / (60 * 1000);
+                        diff -= minutes * (60 * 1000);
+                        long seconds = diff / 1000;
+                        viewDays.setText("" + String.format("%02d", days));
+                        viewHours.setText("" + String.format("%02d", hours));
+                        viewMinutes.setText("" + String.format("%02d", minutes));
+                        viewSeconds.setText("" + String.format("%02d", seconds));
+                    } else {
+                        /*linearLayout1.setVisibility(View.VISIBLE);
+                        linearLayout2.setVisibility(View.GONE);
+                        tvEvent.setText("Android Event Start");
+                        handler.removeCallbacks(runnable);
+                        // handler.removeMessages(0);*/
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        handler.postDelayed(runnable, 0);
+    }
 
+
+    /*@Override
+    public void onStop() {
+        super.onStop();
+
+        Log.i("msg","onStop");
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        Log.i("msg","onResume");
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.i("msg","onDestroyView");
+
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        Log.i("msg","onDestroy");
+    }*/
 }

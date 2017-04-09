@@ -1,29 +1,154 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.omega.appfooball.fragments.StreamingFragment">
+    tools:context="com.example.omega.appfooball.fragments.StreamingFragment"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
 
-
-     <!-- <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/view_streaming"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        class="com.google.android.youtube.player.YouTubePlayerView"
-        />-->
     <FrameLayout
         android:id="@+id/youtube_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_height="230dp"
         android:visibility="visible" />
 
-    <Button
-        android:text="Play Video"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_play_youtube"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:gravity="center"
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:id="@+id/view_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cardview_light_background"
+                android:text="02"
+                android:textSize="50sp"
+                android:includeFontPadding="false"/>
+
+
+            <TextView
+                android:id="@+id/text_view_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="DAYS"
+                android:textSize="10sp"
+                android:layout_marginBottom="5dp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/view_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cardview_light_background"
+                android:text="08"
+                android:textSize="50sp"
+                android:includeFontPadding="false"/>
+
+
+            <TextView
+                android:id="@+id/text_view_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOURS"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp"
+                android:layout_marginBottom="5dp"
+                android:includeFontPadding="false"/>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+
+            <TextView
+                android:id="@+id/view_minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cardview_light_background"
+                android:text="19"
+                android:textSize="50sp"
+                android:includeFontPadding="false"/>
+
+            <TextView
+                android:id="@+id/text_view_minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MINS"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="5dp"
+                android:textSize="10sp"
+                android:includeFontPadding="false"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+
+        <TextView
+            android:id="@+id/view_seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_light_background"
+            android:text="10"
+            android:textSize="50sp"
+            android:includeFontPadding="false"/>
+
+            <TextView
+                android:id="@+id/text_view_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SECS"
+                android:textColor="@color/colorAccent"
+                android:textSize="10dp"
+                android:layout_marginBottom="5sp"
+                android:includeFontPadding="false"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/allianzarena"/>
+
+
+</LinearLayout>

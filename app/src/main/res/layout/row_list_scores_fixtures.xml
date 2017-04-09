@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Arsenal FC"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:maxLength="14"
                     android:layout_gravity="center"
                     android:textColor="@color/primary_dark"
@@ -65,9 +65,9 @@
                     android:id="@+id/vs_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="50dp"
+                    android:textSize="50sp"
                     android:text="VS"
-                    android:textColor="@color/accent"
+                    android:textColor="@color/colorAccent"
                     />
             </LinearLayout>
 
@@ -90,14 +90,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Team1"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:layout_gravity="center"
                     android:maxLength="14"
                     android:textColor="@color/primary_dark"
                     android:layout_marginTop="6dp" />
 
             </LinearLayout>
-
 
 
         </LinearLayout>
