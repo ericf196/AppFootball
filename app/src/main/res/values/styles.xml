@@ -14,7 +14,6 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
     <!-- PagerViewTitle -->
 
         <style name="CustomTitlePageIndicator">
@@ -35,6 +34,10 @@
             <!-- aplica bold al texto seleccionado -->
             <item name="selectedBold">true</item>
         </style>
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+    </style>
 
 
 

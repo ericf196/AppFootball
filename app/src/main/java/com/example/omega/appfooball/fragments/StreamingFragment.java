@@ -33,7 +33,7 @@ public class StreamingFragment extends Fragment /*implements View.OnClickListene
 
     private static final String API_KEY = "AIzaSyBDnx8srcY_np_M7BMnis74p1x1HRhE9Q0";
 
-    private static String VIDEO_ID = "WjU1vFTofyE";
+    private static String VIDEO_ID = "Wgj_mRJf6X8";
 
     private TextView viewDays, viewHours, viewMinutes, viewSeconds, tvEvent;
     private LinearLayout linearLayout1, linearLayout2;
@@ -110,7 +110,7 @@ public class StreamingFragment extends Fragment /*implements View.OnClickListene
                 try {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     // Here Set your Event Date
-                    Date eventDate = dateFormat.parse("2017-04-10");
+                    Date eventDate = dateFormat.parse("2017-04-14");
                     Date currentDate = new Date();
                     if (!currentDate.after(eventDate)) {
                         long diff = eventDate.getTime() - currentDate.getTime();
